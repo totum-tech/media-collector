@@ -1,0 +1,17 @@
+{
+  "name": "media-collector",
+  "version": "1.0.0",
+  "description": "This package takes an input directory, scans the directory recursively for media metadata, and outputs a JSON array containing all of the media metadata.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "author": "Totum Technologies LLC",
+  "license": "MIT",
+  "devDependencies": {
+    "@straw-hat/logger": "^1.0.0",
+    "@straw-hat/tsconfig": "^2.2.0",
+    "typescript": "^4.2.4"
+  }
+}
