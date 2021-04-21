@@ -42,11 +42,15 @@ async function findCompatibleMedia(
 }
 
 async function extractExifForFiles(files: MediaPath[]): Promise<Media[]> {
-  return Promise.all(
+  const exifs = await Promise.all(
     files.map((mediaPath) => {
       return exifReader.read(mediaPath);
     })
   );
+
+  await exifReader.end();
+
+  return exifs;
 }
 
 findCompatibleMedia(INPUT_DIRECTORY)
