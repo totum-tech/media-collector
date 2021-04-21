@@ -25,7 +25,7 @@ async function findCompatibleMedia(
   pathToSearch: DirectoryPath
 ): Promise<MediaPath[]> {
   return new Promise((resolve, reject) => {
-    const supportedFileGlob = createSupportedFileGlob(SUPPORTED_VIDEOS);
+    const supportedFileGlob = createSupportedFileGlob(SUPPORTED_FILETYPES);
     logger.info("looking for", { supportedFileGlob });
     glob(
       `${pathToSearch}/**/*.@(${supportedFileGlob})`,
