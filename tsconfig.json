@@ -3,7 +3,8 @@
     "outDir": "dist/",
     "module": "commonjs",
     "moduleResolution": "Node",
-    "target": "esnext"
+    "target": "esnext",
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
