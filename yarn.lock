@@ -12,7 +12,20 @@
   resolved "https://registry.npmjs.org/@straw-hat/tsconfig/-/tsconfig-2.2.0.tgz#66c9c9314e91c159492ccb2c3c7498459eb2f818"
   integrity sha512-OmNg/ErhxgrmCpirE2ta6nGNV0An0dmRWSPuV4tn0R/7iQzqm4dsgIa1t3GNbq2oouJ8AaK35dm6x5DXL7lLwg==
 
-"@types/node@^14.14.41":
+"@types/glob@^7.1.3":
+  version "7.1.3"
+  resolved "https://registry.npmjs.org/@types/glob/-/glob-7.1.3.tgz#e6ba80f36b7daad2c685acd9266382e68985c183"
+  integrity sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
+  dependencies:
+    "@types/minimatch" "*"
+    "@types/node" "*"
+
+"@types/minimatch@*":
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.4.tgz#f0ec25dbf2f0e4b18647313ac031134ca5b24b21"
+  integrity sha512-1z8k4wzFnNjVK/tlxvrWuK5WMt6mydWWP7+zvH5eFep4oj+UkrfiJTRtjCeBXNpwaA/FYqqtb4/QS4ianFpIRA==
+
+"@types/node@*", "@types/node@^14.14.41":
   version "14.14.41"
   resolved "https://registry.npmjs.org/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
