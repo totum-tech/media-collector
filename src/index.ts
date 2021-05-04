@@ -1,16 +1,14 @@
 import glob from "glob";
-import logger from "./logger";
 import { ExifTool } from "exiftool-vendored";
+import { Media, DirectoryPath, MediaPath, Filetype } from "./types";
+import logger from "./logger";
+import { writeToTSV } from "./writeMedia";
 
 logger.info("Hello world!");
 const exifReader = new ExifTool();
 
-const INPUT_DIRECTORY = "/Volumes/photo/raws";
-
-type DirectoryPath = string;
-type MediaPath = string;
-type Filetype = string;
-type Media = any;
+const INPUT_DIRECTORY = "/Volumes/photo/test";
+const TSV_PATH = "/Volumes/photo/test/database.tsv";
 
 const SUPPORTED_PHOTOS = ["jpg", "png", "arw", "dng"];
 const SUPPORTED_VIDEOS = ["mov", "mp4"];
@@ -55,4 +53,4 @@ async function extractExifForFiles(files: MediaPath[]): Promise<Media[]> {
 
 findCompatibleMedia(INPUT_DIRECTORY)
   .then(extractExifForFiles)
-  .then((media) => logger.info("Media 4 U", media));
+  .then(writeToTSV(TSV_PATH));
