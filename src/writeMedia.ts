@@ -1,4 +1,3 @@
-import p from "papaparse";
 import fs from "fs";
 import logger from "./logger";
 import { Media, Path } from "./types";
@@ -43,9 +42,7 @@ export function writeToTSV(path) {
 
       return fs.promises.appendFile(path, tsv);
     };
-  }
-  // if it doesn't exist
-  else {
+  } else {
     return async function writeNewTSV(media: Media[]): Promise<void> {
       const keys = Object.keys(media[0]);
       logger.info("writeToNewTSV input", {
