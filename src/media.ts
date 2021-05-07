@@ -85,5 +85,5 @@ export function collectMedia(path): Promise<void | { databasePath: Path}> {
         .then(extractExifForFiles)
         .then(writeToTSV(tsvPath))
         .then(loadMedia(tsvPath))
-        .then(() => ({ databasePath: tsvPath }));
+        .then((media) => ({ databasePath: tsvPath, media }));
 }

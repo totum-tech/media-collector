@@ -3,10 +3,10 @@ import logger from "./logger";
 
 const server = makeServer({ logger: true })
 
-export async function startServer({ databasePath }) {
+export async function startServer({ databasePath, media }) {
 
     server.get('/media', async (request, reply) => {
-        return { databasePath }
+        return { databasePath, media: media.slice(0, 12) }
     });
 
     try {
