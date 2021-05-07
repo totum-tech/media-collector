@@ -3,11 +3,12 @@ import logger from "./logger";
 
 const server = makeServer({ logger: true })
 
-server.get('/media', async (request, reply) => {
+export async function startServer({ databasePath }) {
 
-});
+    server.get('/media', async (request, reply) => {
+        return { databasePath }
+    });
 
-const startServer = async () => {
     try {
         await server.listen(3000);
     } catch (e) {

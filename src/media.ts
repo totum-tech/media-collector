@@ -78,11 +78,12 @@ async function extractExifForFiles(files: MediaPath[]): Promise<Media[]> {
     return exifs;
 }
 
-export function collectMedia(path) {
+export function collectMedia(path): Promise<void | { databasePath: Path}> {
     const tsvPath = `${path}/database.tsv`;
 
     return findCompatibleMedia(path)
         .then(extractExifForFiles)
         .then(writeToTSV(tsvPath))
-        .then(loadMedia(tsvPath));
+        .then(loadMedia(tsvPath))
+        .then(() => ({ databasePath: tsvPath }));
 }
