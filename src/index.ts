@@ -3,6 +3,7 @@ import { ExifTool } from "exiftool-vendored";
 import { Media, DirectoryPath, MediaPath, Filetype } from "./types";
 import logger from "./logger";
 import { writeToTSV } from "./writeMedia";
+import { loadMedia } from "./loadMedia";
 
 logger.info("Hello world!");
 const exifReader = new ExifTool();
@@ -53,4 +54,5 @@ async function extractExifForFiles(files: MediaPath[]): Promise<Media[]> {
 
 findCompatibleMedia(INPUT_DIRECTORY)
   .then(extractExifForFiles)
-  .then(writeToTSV(TSV_PATH));
+  .then(writeToTSV(TSV_PATH))
+  .then(loadMedia(TSV_PATH));
