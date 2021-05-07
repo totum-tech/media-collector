@@ -8,10 +8,10 @@ import { loadMedia } from "./loadMedia";
 logger.info("Hello world!");
 const exifReader = new ExifTool();
 
-const INPUT_DIRECTORY = "/Volumes/photo/test";
-const TSV_PATH = "/Volumes/photo/test/database.tsv";
+const INPUT_DIRECTORY = "/Volumes/photo/exports";
+const TSV_PATH = `${INPUT_DIRECTORY}/database.tsv`;
 
-const SUPPORTED_PHOTOS = ["jpg", "png", "arw", "dng"];
+const SUPPORTED_PHOTOS = ["jpg", "png"];
 const SUPPORTED_VIDEOS = ["mov", "mp4"];
 const SUPPORTED_FILETYPES = SUPPORTED_PHOTOS.concat(SUPPORTED_VIDEOS);
 
